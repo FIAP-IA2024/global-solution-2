@@ -1,0 +1,56 @@
+# Ambientes virtuais
+venv/
+env/
+.env/
+.venv/
+ENV/
+
+# Arquivos de cache Python
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Distribuiu00e7u00e3o/empacotamento
+dist/
+build/
+*.egg-info/
+
+# Arquivos do sistema
+.DS_Store
+Thumbs.db
+
+# Arquivos gerados durante a execuu00e7u00e3o
+*.log
+*.csv
+*.pkl
+*.h5
+*.joblib
+*.pt
+
+# Arquivos de configurau00e7u00e3o do IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# Arquivos de dados grandes (caso necessu00e1rio versionar os dados, remover esta entrada)
+# *.xlsx
+# *.xls
+
+# Pastas para modelos treinados
+models/saved_models/
+
+# Resultados e gru00e1ficos
+results/
+plots/
+
+# Arquivos temporu00e1rios
+tmp/
+temp/
+
