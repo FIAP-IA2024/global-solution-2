@@ -1,0 +1,94 @@
+ESP32 Disaster Monitoring System - Circuit Diagram
+===============================================
+
+This is a text representation of the circuit connections. A proper diagram would be created using
+a tool like Fritzing, but this serves as documentation for connections.
+
++------------------------+
+|                        |
+|        ESP32           |
+|                        |
++-----+-------------+----+
+      |             |
+      |             |
+      |             |
++-----v-----+  +----v----+    +----------+    +--------------+
+|  DHT22    |  | BMP280  |    | HC-SR04  |    | Soil Moisture|
+| Temp/Hum  |  | Pressure|    | Distance |    |    Sensor    |
++-----------+  +---------+    +----------+    +--------------+
+     |             |              |  |              |
+     |             |              |  |              |
+     |             |              |  |              |
+     v             v              v  v              v
+     4             I2C            5  18            34
+     |             |              |  |              |
+     |             |              |  |              |
++----+-------------+--------------+-+-------------+----+
+|                     ESP32                            |
++----+------------------------+-------------------+----+
+     |                        |                   |
+     v                        v                   v
+     15                       32                  35
+     |                        |                   |
+     |                        |                   |
++----v----+            +------v-------+    +-----v------+
+| Buzzer   |            | Vibration   |    | Rain       |
+|          |            | Sensor      |    | Sensor     |
++----------+            +-------------+    +------------+
+
+
+Pin Connections:
+===============
+
+1. DHT22 (Temperature/Humidity Sensor):
+   - VCC -> 3.3V
+   - GND -> GND
+   - DATA -> GPIO 4
+
+2. BMP280 (Pressure Sensor):
+   - VCC -> 3.3V
+   - GND -> GND
+   - SCL -> GPIO 22 (I2C Clock)
+   - SDA -> GPIO 21 (I2C Data)
+
+3. HC-SR04 (Ultrasonic Distance Sensor for Water Level):
+   - VCC -> 5V
+   - GND -> GND
+   - TRIG -> GPIO 5
+   - ECHO -> GPIO 18 (through voltage divider: 1ku03a9 + 2ku03a9 to protect ESP32)
+
+4. Soil Moisture Sensor:
+   - VCC -> 3.3V
+   - GND -> GND
+   - Analog Output -> GPIO 34
+
+5. Rain Sensor:
+   - VCC -> 3.3V
+   - GND -> GND
+   - Analog Output -> GPIO 35
+
+6. Vibration Sensor:
+   - VCC -> 3.3V
+   - GND -> GND
+   - Analog Output -> GPIO 32
+
+7. Buzzer:
+   - Positive -> GPIO 15 (via NPN transistor or directly if it's a 3.3V buzzer)
+   - Negative -> GND
+
+8. LED (Built-in to ESP32):
+   - Connected to GPIO 2
+
+
+Power Considerations:
+====================
+- ESP32 powered via USB or external power supply (7-12V to Vin)
+- Use power regulators and capacitors for clean power
+- Consider adding a small LiPo battery with charging circuit for backup power
+
+Notes:
+======
+- The water level sensor (HC-SR04) requires a voltage divider for the ECHO pin since it operates at 5V but ESP32 is 3.3V
+- For outdoor deployment, use appropriate weatherproof enclosure
+- Use capacitors (100nF) across power pins of sensors for noise reduction
+- Consider adding a status RGB LED for visual indication of system state
