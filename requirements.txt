@@ -1,6 +1,6 @@
 # Pacotes principais para análise de dados
-pandas==2.0.0
-numpy==2.0.2
+pandas>=1.5.0,<2.1.0
+numpy>=1.22.0,<=1.24.3
 
 # Pacotes para visualização
 matplotlib==3.7.1
@@ -22,3 +22,6 @@ datetime
 tensorflow==2.13.0
 # ou
 # torch==2.0.1  # Descomente para usar PyTorch em vez de TensorFlow
+
+# Especificando versões adicionais para compatibilidade
+tensorflow-metal==0.8.0  # Suporte para GPU em Macs com chip M1/M2/M3 (opcional)

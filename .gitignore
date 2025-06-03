@@ -46,11 +46,11 @@ Thumbs.db
 # Pastas para modelos treinados
 models/saved_models/
 
-# Resultados e gru00e1ficos
+# Resultados e gráficos
 results/
 plots/
 
-# Arquivos temporu00e1rios
+# Arquivos temporários
 tmp/
 temp/
 

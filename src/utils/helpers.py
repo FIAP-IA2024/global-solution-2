@@ -15,6 +15,11 @@ def create_output_dir(dir_path):
     return dir_path
 
 
+def create_directory(dir_path):
+    """Create directory if it doesn't exist (alias for create_output_dir)."""
+    return create_output_dir(dir_path)
+
+
 def save_plot(fig, filename, output_dir="results/plots", dpi=300, bbox_inches="tight"):
     """Save matplotlib figure to specified directory."""
     create_output_dir(output_dir)
