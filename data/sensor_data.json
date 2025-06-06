@@ -1,0 +1,666 @@
+{
+  "devices": {
+    "ESP32_01": {
+      "name": "Sensor S\u00e3o Paulo",
+      "location": "S\u00e3o Paulo, SP",
+      "lat": -23.5505,
+      "lon": -46.6333,
+      "status": "online",
+      "last_update": "2025-06-06T16:09:01.445138"
+    },
+    "ESP32_02": {
+      "name": "Sensor Rio de Janeiro",
+      "location": "Rio de Janeiro, RJ",
+      "lat": -22.9068,
+      "lon": -43.1729,
+      "status": "online",
+      "last_update": "2025-06-06T16:09:01.445238"
+    },
+    "ESP32_03": {
+      "name": "Sensor Belo Horizonte",
+      "location": "Belo Horizonte, MG",
+      "lat": -19.9167,
+      "lon": -43.9345,
+      "status": "warning",
+      "last_update": "2025-06-06T16:09:01.445329"
+    },
+    "ESP32_04": {
+      "name": "Sensor Salvador",
+      "location": "Salvador, BA",
+      "lat": -12.9714,
+      "lon": -38.5014,
+      "status": "online",
+      "last_update": "2025-06-06T16:09:01.445340"
+    }
+  },
+  "readings": [
+    {
+      "device_id": "ESP32_01",
+      "timestamp": "2025-06-03T02:19:06.620419",
+      "readings": {
+        "temperature": 28.339111945382285,
+        "humidity": 72.28895468110741,
+        "pressure": 1017.6827381685724,
+        "water_level": 9.278869174994965,
+        "soil_moisture": 41.068219314599716,
+        "vibration": 57.20726728651633,
+        "rain_level": 10.040349688874468
+      }
+    },
+    {
+      "device_id": "ESP32_02",
+      "timestamp": "2025-06-03T02:19:06.620433",
+      "readings": {
+        "temperature": 27.021487667382154,
+        "humidity": 69.96203510398857,
+        "pressure": 1021.1439282458842,
+        "water_level": 19.842499253159712,
+        "soil_moisture": 40.90163318031871,
+        "vibration": 42.49589130786459,
+        "rain_level": 7.228135537365933
+      }
+    },
+    {
+      "device_id": "ESP32_03",
+      "timestamp": "2025-06-03T02:19:06.620441",
+      "readings": {
+        "temperature": 23.46011213737985,
+        "humidity": 71.86373906229377,
+        "pressure": 1014.9293858299329,
+        "water_level": 15.84806230713953,
+        "soil_moisture": 47.79770659444807,
+        "vibration": 47.181742955277585,
+        "rain_level": 3.699192653033371
+      }
+    },
+    {
+      "device_id": "ESP32_04",
+      "timestamp": "2025-06-03T02:19:06.620446",
+      "readings": {
+        "temperature": 27.779525927173232,
+        "humidity": 58.691555504941306,
+        "pressure": 1004.1629226313387,
+        "water_level": 35.89592006974746,
+        "soil_moisture": 43.463338334914326,
+        "vibration": 98.48049525500697,
+        "rain_level": 8.288503521988012
+      }
+    },
+    {
+      "device_id": "ESP32_01",
+      "timestamp": "2025-06-03T02:20:06.628613",
+      "readings": {
+        "temperature": 27.4254297035411,
+        "humidity": 46.34524382579332,
+        "pressure": 1005.6053795459844,
+        "water_level": 26.58397465664773,
+        "soil_moisture": 31.177044974354338,
+        "vibration": 38.715881073003985,
+        "rain_level": 7.476123798803233
+      }
+    },
+    {
+      "device_id": "ESP32_02",
+      "timestamp": "2025-06-03T02:20:06.628718",
+      "readings": {
+        "temperature": 26.47204909092131,
+        "humidity": 78.68742387157545,
+        "pressure": 1014.0328949222187,
+        "water_level": 18.428589998557516,
+        "soil_moisture": 41.43674030711074,
+        "vibration": 86.77753069942811,
+        "rain_level": 2.2477763878461756
+      }
+    },
+    {
+      "device_id": "ESP32_03",
+      "timestamp": "2025-06-03T02:20:06.628749",
+      "readings": {
+        "temperature": 22.011863805998523,
+        "humidity": 72.17050779925604,
+        "pressure": 1011.9947560161122,
+        "water_level": 15.258332390871765,
+        "soil_moisture": 27.28627040437152,
+        "vibration": 93.58865197792045,
+        "rain_level": 2.3756705363664508
+      }
+    },
+    {
+      "device_id": "ESP32_04",
+      "timestamp": "2025-06-03T02:20:06.628767",
+      "readings": {
+        "temperature": 24.697204238739936,
+        "humidity": 44.815372490649324,
+        "pressure": 1018.1963678827976,
+        "water_level": 17.604840651721208,
+        "soil_moisture": 47.946087689529186,
+        "vibration": 99.58695848979926,
+        "rain_level": 9.330371847022855
+      }
+    },
+    {
+      "device_id": "ESP32_01",
+      "timestamp": "2025-06-03T02:21:06.633173",
+      "readings": {
+        "temperature": 24.481873849291254,
+        "humidity": 53.32371684109489,
+        "pressure": 1017.934558825479,
+        "water_level": 16.37566569486374,
+        "soil_moisture": 46.289433266051134,
+        "vibration": 42.67898418936622,
+        "rain_level": 5.173028063624922
+      }
+    },
+    {
+      "device_id": "ESP32_02",
+      "timestamp": "2025-06-03T02:21:06.633243",
+      "readings": {
+        "temperature": 21.22254169478556,
+        "humidity": 76.52203815905361,
+        "pressure": 1013.3531302508692,
+        "water_level": 36.88399275094443,
+        "soil_moisture": 23.334169775877974,
+        "vibration": 47.316979723759864,
+        "rain_level": 10.060047276859018
+      }
+    },
+    {
+      "device_id": "ESP32_03",
+      "timestamp": "2025-06-03T02:21:06.633282",
+      "readings": {
+        "temperature": 20.976658524782287,
+        "humidity": 76.77863985897122,
+        "pressure": 1017.8343912346644,
+        "water_level": 18.705844816394315,
+        "soil_moisture": 36.18125954022895,
+        "vibration": 33.24196417588486,
+        "rain_level": 7.0331877938057685
+      }
+    },
+    {
+      "device_id": "ESP32_04",
+      "timestamp": "2025-06-03T02:21:06.633316",
+      "readings": {
+        "temperature": 26.669841791539117,
+        "humidity": 49.90201782397091,
+        "pressure": 1006.1511744809848,
+        "water_level": 31.745282293443427,
+        "soil_moisture": 22.8564450438925,
+        "vibration": 15.564319709278458,
+        "rain_level": 7.318820918269179
+      }
+    },
+    {
+      "device_id": "ESP32_01",
+      "timestamp": "2025-06-03T02:22:06.641362",
+      "readings": {
+        "temperature": 27.042757526766895,
+        "humidity": 72.36154997302935,
+        "pressure": 1017.8011876038645,
+        "water_level": 20.802387463323402,
+        "soil_moisture": 45.64598795136771,
+        "vibration": 77.1134309275187,
+        "rain_level": 2.620803990552246
+      }
+    },
+    {
+      "device_id": "ESP32_02",
+      "timestamp": "2025-06-03T02:22:06.641419",
+      "readings": {
+        "temperature": 23.20283017713093,
+        "humidity": 49.37188784648419,
+        "pressure": 1000.8915001406089,
+        "water_level": 18.136874621505868,
+        "soil_moisture": 30.458920759338028,
+        "vibration": 60.70323344479215,
+        "rain_level": 7.061370830594157
+      }
+    },
+    {
+      "device_id": "ESP32_03",
+      "timestamp": "2025-06-03T02:22:06.641454",
+      "readings": {
+        "temperature": 27.074154009008122,
+        "humidity": 56.27396545531782,
+        "pressure": 1011.9826384345514,
+        "water_level": 12.94480196363418,
+        "soil_moisture": 44.9516093313214,
+        "vibration": 39.73538440445533,
+        "rain_level": 2.3800703452922614
+      }
+    },
+    {
+      "device_id": "ESP32_04",
+      "timestamp": "2025-06-03T02:22:06.641485",
+      "readings": {
+        "temperature": 22.553461461330336,
+        "humidity": 59.84706739425204,
+        "pressure": 1014.8590793477839,
+        "water_level": 11.372859325979503,
+        "soil_moisture": 51.213351611229115,
+        "vibration": 65.47063124369069,
+        "rain_level": 5.4119579568580205
+      }
+    },
+    {
+      "device_id": "ESP32_01",
+      "timestamp": "2025-06-03T02:23:06.657729",
+      "readings": {
+        "temperature": 24.757000455883013,
+        "humidity": 68.10488326609763,
+        "pressure": 1015.3578282312614,
+        "water_level": 14.25333114934256,
+        "soil_moisture": 60.10363699126576,
+        "vibration": 71.7601638841054,
+        "rain_level": 2.8652451097611875
+      }
+    },
+    {
+      "device_id": "ESP32_02",
+      "timestamp": "2025-06-03T02:23:06.657787",
+      "readings": {
+        "temperature": 23.23490821644696,
+        "humidity": 50.659292583490725,
+        "pressure": 1017.0238121893452,
+        "water_level": 21.962117220464393,
+        "soil_moisture": 52.08162957917291,
+        "vibration": 76.67570310727591,
+        "rain_level": 3.9757476680838026
+      }
+    },
+    {
+      "device_id": "ESP32_03",
+      "timestamp": "2025-06-03T02:23:06.657823",
+      "readings": {
+        "temperature": 23.161544188956046,
+        "humidity": 57.89500271452413,
+        "pressure": 1023.533413161097,
+        "water_level": 25.529128008005717,
+        "soil_moisture": 41.04794818440231,
+        "vibration": 37.66178069084438,
+        "rain_level": 2.053715166580797
+      }
+    },
+    {
+      "device_id": "ESP32_04",
+      "timestamp": "2025-06-03T02:23:06.657854",
+      "readings": {
+        "temperature": 26.18439541341668,
+        "humidity": 60.06140123828723,
+        "pressure": 1019.1179561399017,
+        "water_level": 23.820767262259753,
+        "soil_moisture": 54.2378483837159,
+        "vibration": 69.026096100714,
+        "rain_level": 6.985671295265735
+      }
+    },
+    {
+      "device_id": "ESP32_01",
+      "timestamp": "2025-06-03T02:24:06.668167",
+      "readings": {
+        "temperature": 27.416195555950498,
+        "humidity": 64.39902579468148,
+        "pressure": 1006.7209967609048,
+        "water_level": 33.98994595091435,
+        "soil_moisture": 27.22398733949855,
+        "vibration": 36.77765290454187,
+        "rain_level": 6.146237713507291
+      }
+    },
+    {
+      "device_id": "ESP32_02",
+      "timestamp": "2025-06-03T02:24:06.668213",
+      "readings": {
+        "temperature": 21.995929569217864,
+        "humidity": 61.9579659156617,
+        "pressure": 1012.8885618511555,
+        "water_level": 9.094032238146356,
+        "soil_moisture": 60.222651521435466,
+        "vibration": 65.28114932103038,
+        "rain_level": 3.5674971712911785
+      }
+    },
+    {
+      "device_id": "ESP32_03",
+      "timestamp": "2025-06-03T02:24:06.668241",
+      "readings": {
+        "temperature": 22.39215793803824,
+        "humidity": 53.454190427435776,
+        "pressure": 1015.8951216256789,
+        "water_level": 24.55402018290843,
+        "soil_moisture": 22.934790432217245,
+        "vibration": 59.27443553181408,
+        "rain_level": 2.2642612106396793
+      }
+    },
+    {
+      "device_id": "ESP32_04",
+      "timestamp": "2025-06-03T02:24:06.668267",
+      "readings": {
+        "temperature": 28.218787335617982,
+        "humidity": 70.42487130565698,
+        "pressure": 1013.459442817519,
+        "water_level": 21.45756912934911,
+        "soil_moisture": 40.556740170993216,
+        "vibration": 3.6160779192680366,
+        "rain_level": 7.413501549004934
+      }
+    },
+    {
+      "device_id": "ESP32_01",
+      "timestamp": "2025-06-06T16:08:01.436759",
+      "readings": {
+        "temperature": 24.47347586540453,
+        "humidity": 42.572014035877885,
+        "pressure": 1015.8656569210606,
+        "water_level": 16.19480157342936,
+        "soil_moisture": 38.378715596098914,
+        "vibration": 45.04047839039294,
+        "rain_level": 8.26678192748332
+      }
+    },
+    {
+      "device_id": "ESP32_02",
+      "timestamp": "2025-06-06T16:08:01.436771",
+      "readings": {
+        "temperature": 31.014793543889756,
+        "humidity": 49.24372820898475,
+        "pressure": 1018.9506082609701,
+        "water_level": 19.477679023114877,
+        "soil_moisture": 32.166706963828545,
+        "vibration": 68.85001016587785,
+        "rain_level": 2.4281435514405434
+      }
+    },
+    {
+      "device_id": "ESP32_03",
+      "timestamp": "2025-06-06T16:08:01.436777",
+      "readings": {
+        "temperature": 21.205370510968155,
+        "humidity": 70.10028524611644,
+        "pressure": 1009.9765911643391,
+        "water_level": 10.134246038046541,
+        "soil_moisture": 48.51170492578403,
+        "vibration": 66.35922097196622,
+        "rain_level": 3.033065476447563
+      }
+    },
+    {
+      "device_id": "ESP32_04",
+      "timestamp": "2025-06-06T16:08:01.436782",
+      "readings": {
+        "temperature": 24.20459121853744,
+        "humidity": 64.54283151179646,
+        "pressure": 1002.0250592775759,
+        "water_level": 28.995250876168157,
+        "soil_moisture": 43.236801448242815,
+        "vibration": 50.40756957112387,
+        "rain_level": 5.381367554569153
+      }
+    },
+    {
+      "device_id": "ESP32_01",
+      "timestamp": "2025-06-06T16:09:01.445138",
+      "readings": {
+        "temperature": 26.925312374339743,
+        "humidity": 44.852078390212526,
+        "pressure": 1019.9677222490399,
+        "water_level": 19.497792406979467,
+        "soil_moisture": 45.04859383799076,
+        "vibration": 99.95684713533424,
+        "rain_level": 5.502465731613245
+      }
+    },
+    {
+      "device_id": "ESP32_02",
+      "timestamp": "2025-06-06T16:09:01.445238",
+      "readings": {
+        "temperature": 33.679068222745116,
+        "humidity": 58.841709736920585,
+        "pressure": 1009.4282513541721,
+        "water_level": 16.351989928322393,
+        "soil_moisture": 44.66806519814129,
+        "vibration": 71.74575022085119,
+        "rain_level": 0.24758408295480283
+      }
+    },
+    {
+      "device_id": "ESP32_03",
+      "timestamp": "2025-06-06T16:09:01.445329",
+      "readings": {
+        "temperature": 24.960497468515566,
+        "humidity": 55.44452809847034,
+        "pressure": 1017.2127667099594,
+        "water_level": 29.355713734977606,
+        "soil_moisture": 40.02971607242835,
+        "vibration": 94.52901478192669,
+        "rain_level": 8.9449664369
+      }
+    },
+    {
+      "device_id": "ESP32_04",
+      "timestamp": "2025-06-06T16:09:01.445340",
+      "readings": {
+        "temperature": 26.402186686913538,
+        "humidity": 59.98866422411066,
+        "pressure": 1015.3482903590885,
+        "water_level": 30.044435725964796,
+        "soil_moisture": 48.27885528444527,
+        "vibration": 56.643229699688,
+        "rain_level": 3.316589593953668
+      }
+    }
+  ],
+  "alerts": [
+    {
+      "type": "high_water_level",
+      "message": "N\u00edvel de \u00e1gua elevado: 19.8cm - risco de inunda\u00e7\u00e3o",
+      "severity": "critical",
+      "device_id": "ESP32_02",
+      "timestamp": "2025-06-03T02:19:06.620433"
+    },
+    {
+      "type": "high_water_level",
+      "message": "N\u00edvel de \u00e1gua elevado: 15.8cm - risco de inunda\u00e7\u00e3o",
+      "severity": "critical",
+      "device_id": "ESP32_03",
+      "timestamp": "2025-06-03T02:19:06.620441"
+    },
+    {
+      "type": "high_water_level",
+      "message": "N\u00edvel de \u00e1gua elevado: 35.9cm - risco de inunda\u00e7\u00e3o",
+      "severity": "critical",
+      "device_id": "ESP32_04",
+      "timestamp": "2025-06-03T02:19:06.620446"
+    },
+    {
+      "type": "high_water_level",
+      "message": "N\u00edvel de \u00e1gua elevado: 26.6cm - risco de inunda\u00e7\u00e3o",
+      "severity": "critical",
+      "device_id": "ESP32_01",
+      "timestamp": "2025-06-03T02:20:06.628613"
+    },
+    {
+      "type": "high_water_level",
+      "message": "N\u00edvel de \u00e1gua elevado: 18.4cm - risco de inunda\u00e7\u00e3o",
+      "severity": "critical",
+      "device_id": "ESP32_02",
+      "timestamp": "2025-06-03T02:20:06.628718"
+    },
+    {
+      "type": "high_water_level",
+      "message": "N\u00edvel de \u00e1gua elevado: 15.3cm - risco de inunda\u00e7\u00e3o",
+      "severity": "critical",
+      "device_id": "ESP32_03",
+      "timestamp": "2025-06-03T02:20:06.628749"
+    },
+    {
+      "type": "high_water_level",
+      "message": "N\u00edvel de \u00e1gua elevado: 17.6cm - risco de inunda\u00e7\u00e3o",
+      "severity": "critical",
+      "device_id": "ESP32_04",
+      "timestamp": "2025-06-03T02:20:06.628767"
+    },
+    {
+      "type": "high_water_level",
+      "message": "N\u00edvel de \u00e1gua elevado: 16.4cm - risco de inunda\u00e7\u00e3o",
+      "severity": "critical",
+      "device_id": "ESP32_01",
+      "timestamp": "2025-06-03T02:21:06.633173"
+    },
+    {
+      "type": "high_water_level",
+      "message": "N\u00edvel de \u00e1gua elevado: 36.9cm - risco de inunda\u00e7\u00e3o",
+      "severity": "critical",
+      "device_id": "ESP32_02",
+      "timestamp": "2025-06-03T02:21:06.633243"
+    },
+    {
+      "type": "high_water_level",
+      "message": "N\u00edvel de \u00e1gua elevado: 18.7cm - risco de inunda\u00e7\u00e3o",
+      "severity": "critical",
+      "device_id": "ESP32_03",
+      "timestamp": "2025-06-03T02:21:06.633282"
+    },
+    {
+      "type": "high_water_level",
+      "message": "N\u00edvel de \u00e1gua elevado: 31.7cm - risco de inunda\u00e7\u00e3o",
+      "severity": "critical",
+      "device_id": "ESP32_04",
+      "timestamp": "2025-06-03T02:21:06.633316"
+    },
+    {
+      "type": "high_water_level",
+      "message": "N\u00edvel de \u00e1gua elevado: 20.8cm - risco de inunda\u00e7\u00e3o",
+      "severity": "critical",
+      "device_id": "ESP32_01",
+      "timestamp": "2025-06-03T02:22:06.641362"
+    },
+    {
+      "type": "high_water_level",
+      "message": "N\u00edvel de \u00e1gua elevado: 18.1cm - risco de inunda\u00e7\u00e3o",
+      "severity": "critical",
+      "device_id": "ESP32_02",
+      "timestamp": "2025-06-03T02:22:06.641419"
+    },
+    {
+      "type": "high_water_level",
+      "message": "N\u00edvel de \u00e1gua elevado: 12.9cm - risco de inunda\u00e7\u00e3o",
+      "severity": "critical",
+      "device_id": "ESP32_03",
+      "timestamp": "2025-06-03T02:22:06.641454"
+    },
+    {
+      "type": "high_water_level",
+      "message": "N\u00edvel de \u00e1gua elevado: 11.4cm - risco de inunda\u00e7\u00e3o",
+      "severity": "critical",
+      "device_id": "ESP32_04",
+      "timestamp": "2025-06-03T02:22:06.641485"
+    },
+    {
+      "type": "high_water_level",
+      "message": "N\u00edvel de \u00e1gua elevado: 14.3cm - risco de inunda\u00e7\u00e3o",
+      "severity": "critical",
+      "device_id": "ESP32_01",
+      "timestamp": "2025-06-03T02:23:06.657729"
+    },
+    {
+      "type": "high_water_level",
+      "message": "N\u00edvel de \u00e1gua elevado: 22.0cm - risco de inunda\u00e7\u00e3o",
+      "severity": "critical",
+      "device_id": "ESP32_02",
+      "timestamp": "2025-06-03T02:23:06.657787"
+    },
+    {
+      "type": "high_water_level",
+      "message": "N\u00edvel de \u00e1gua elevado: 25.5cm - risco de inunda\u00e7\u00e3o",
+      "severity": "critical",
+      "device_id": "ESP32_03",
+      "timestamp": "2025-06-03T02:23:06.657823"
+    },
+    {
+      "type": "high_water_level",
+      "message": "N\u00edvel de \u00e1gua elevado: 23.8cm - risco de inunda\u00e7\u00e3o",
+      "severity": "critical",
+      "device_id": "ESP32_04",
+      "timestamp": "2025-06-03T02:23:06.657854"
+    },
+    {
+      "type": "high_water_level",
+      "message": "N\u00edvel de \u00e1gua elevado: 34.0cm - risco de inunda\u00e7\u00e3o",
+      "severity": "critical",
+      "device_id": "ESP32_01",
+      "timestamp": "2025-06-03T02:24:06.668167"
+    },
+    {
+      "type": "high_water_level",
+      "message": "N\u00edvel de \u00e1gua elevado: 24.6cm - risco de inunda\u00e7\u00e3o",
+      "severity": "critical",
+      "device_id": "ESP32_03",
+      "timestamp": "2025-06-03T02:24:06.668241"
+    },
+    {
+      "type": "high_water_level",
+      "message": "N\u00edvel de \u00e1gua elevado: 21.5cm - risco de inunda\u00e7\u00e3o",
+      "severity": "critical",
+      "device_id": "ESP32_04",
+      "timestamp": "2025-06-03T02:24:06.668267"
+    },
+    {
+      "type": "high_water_level",
+      "message": "N\u00edvel de \u00e1gua elevado: 16.2cm - risco de inunda\u00e7\u00e3o",
+      "severity": "critical",
+      "device_id": "ESP32_01",
+      "timestamp": "2025-06-06T16:08:01.436759"
+    },
+    {
+      "type": "high_water_level",
+      "message": "N\u00edvel de \u00e1gua elevado: 19.5cm - risco de inunda\u00e7\u00e3o",
+      "severity": "critical",
+      "device_id": "ESP32_02",
+      "timestamp": "2025-06-06T16:08:01.436771"
+    },
+    {
+      "type": "high_water_level",
+      "message": "N\u00edvel de \u00e1gua elevado: 10.1cm - risco de inunda\u00e7\u00e3o",
+      "severity": "critical",
+      "device_id": "ESP32_03",
+      "timestamp": "2025-06-06T16:08:01.436777"
+    },
+    {
+      "type": "high_water_level",
+      "message": "N\u00edvel de \u00e1gua elevado: 29.0cm - risco de inunda\u00e7\u00e3o",
+      "severity": "critical",
+      "device_id": "ESP32_04",
+      "timestamp": "2025-06-06T16:08:01.436782"
+    },
+    {
+      "type": "high_water_level",
+      "message": "N\u00edvel de \u00e1gua elevado: 19.5cm - risco de inunda\u00e7\u00e3o",
+      "severity": "critical",
+      "device_id": "ESP32_01",
+      "timestamp": "2025-06-06T16:09:01.445138"
+    },
+    {
+      "type": "high_water_level",
+      "message": "N\u00edvel de \u00e1gua elevado: 16.4cm - risco de inunda\u00e7\u00e3o",
+      "severity": "critical",
+      "device_id": "ESP32_02",
+      "timestamp": "2025-06-06T16:09:01.445238"
+    },
+    {
+      "type": "high_water_level",
+      "message": "N\u00edvel de \u00e1gua elevado: 29.4cm - risco de inunda\u00e7\u00e3o",
+      "severity": "critical",
+      "device_id": "ESP32_03",
+      "timestamp": "2025-06-06T16:09:01.445329"
+    },
+    {
+      "type": "high_water_level",
+      "message": "N\u00edvel de \u00e1gua elevado: 30.0cm - risco de inunda\u00e7\u00e3o",
+      "severity": "critical",
+      "device_id": "ESP32_04",
+      "timestamp": "2025-06-06T16:09:01.445340"
+    }
+  ]
+}
