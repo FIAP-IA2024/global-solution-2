@@ -286,6 +286,56 @@ Quando alguma leitura ultrapassar os limiares definidos no código (por exemplo,
 
 Para interromper a simulação, pressione Ctrl+C.
 
+## 🧮 Processamento de Dados e Modelos
+
+### Preprocessamento de Dados
+
+O script de preprocessamento de dados limpa e prepara o dataset para análise e treinamento de modelos:
+
+1. Execute o script de preprocessamento:
+
+   ```bash
+   python src/data_preprocessing.py
+   ```
+
+2. O script gerará arquivos de dados processados que serão utilizados pelos modelos.
+
+### Desenvolvimento de Modelos
+
+Para treinar e testar modelos de machine learning para previsão de desastres:
+
+1. Execute o script de desenvolvimento de modelos:
+
+   ```bash
+   python src/model_development.py
+   ```
+
+2. Os modelos treinados serão salvos no diretório `models/` para uso posterior no dashboard.
+
+### Redes Neurais
+
+Para treinar e avaliar os modelos de redes neurais:
+
+1. Execute o script principal de desenvolvimento de redes neurais:
+
+   ```bash
+   python src/neural_network_development.py
+   ```
+
+2. Para um teste rápido do modelo de rede neural:
+
+   ```bash
+   python src/neural_network_quick_test.py
+   ```
+
+3. Para utilizar funções específicas da rede neural:
+
+   ```bash
+   python src/neural_network_main.py
+   ```
+
+Observação: Certifique-se de que as dependências necessárias estão instaladas (tensorflow ou torch) conforme especificado no arquivo `requirements.txt`.
+
 ## 🔄 Integrações Futuras
 
 - **APIs Meteorológicas**: Integração com serviços de previsão do tempo para alertas antecipados
