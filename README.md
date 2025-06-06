@@ -23,7 +23,7 @@
 
 ## 📌 Entregas do Projeto
 
-Este projeto representa a Global Solution FIAP 2025.1, um dashboard de monitoramento de desastres naturais que utiliza dados de sensores IoT, modelos de machine learning e redes neurais para prever, monitorar e mitigar os impactos de eventos extremos como inundações, tempestades e terremotos.
+Este projeto representa a Global Solution FIAP 2025.1 para o curso de **Inteligência Artificial**, um dashboard de monitoramento de desastres naturais que utiliza dados de sensores IoT, modelos de machine learning e redes neurais para prever, monitorar e mitigar os impactos de eventos extremos como inundações, tempestades e terremotos.
 
 ---
 
@@ -43,39 +43,36 @@ Este projeto representa a Global Solution FIAP 2025.1, um dashboard de monitoram
 
 ```plaintext
 /global-solution-2
-├── docs/                          # Documentação do projeto
-│   ├── PROJECT_BRIEF.md          # Descrição do tema e requisitos da Global Solution
-│   ├── project-overview.md        # Visão geral do projeto
-│   ├── scope_and_requirements.md  # Escopo e requisitos detalhados
-│   └── tasks/                    # Documentação de tarefas específicas
+├── data/                        # Dados do projeto
+│   └── sensor_data.json        # Arquivo JSON com dados de sensores e alertas
 │
-├── src/                           # Código-fonte do projeto
-│   ├── dashboard/                 # Aplicação Streamlit para o dashboard
-│   │   ├── app.py                # Ponto de entrada principal do dashboard
-│   │   ├── dashboard.py           # Implementação da página inicial do dashboard
-│   │   ├── pages/                # Páginas do dashboard multi-página
-│   │   │   ├── __init__.py       # Define o diretório como pacote Python
-│   │   │   ├── alerts.py         # Página de gerenciamento de alertas
-│   │   │   ├── analytics.py      # Página de análises e predições
-│   │   │   ├── devices.py        # Página de gerenciamento de dispositivos IoT
-│   │   │   └── mapview.py        # Visualização geográfica de zonas de risco
-│   │   └── utils/                # Utilitários para o dashboard
-│   │       ├── __init__.py       # Define o diretório como pacote Python
-│   │       ├── data_loader.py    # Carregamento e processamento de dados
-│   │       └── model_loader.py   # Carregamento e utilização de modelos de ML
-│   ├── esp32/                    # Código para dispositivos ESP32
-│   │   ├── circuit_diagram.txt   # Diagrama de circuito para o hardware
+├── src/                         # Código-fonte do projeto
+│   ├── dashboard/               # Aplicação Streamlit para o dashboard
+│   │   ├── app.py              # Ponto de entrada principal do dashboard
+│   │   ├── dashboard.py         # Implementação da página inicial do dashboard
+│   │   ├── pages/              # Páginas do dashboard multi-página
+│   │   │   ├── __init__.py     # Define o diretório como pacote Python
+│   │   │   ├── alerts.py       # Página de gerenciamento de alertas
+│   │   │   ├── analytics.py    # Página de análises e predições
+│   │   │   ├── devices.py      # Página de gerenciamento de dispositivos IoT
+│   │   │   └── mapview.py      # Visualização geográfica de zonas de risco
+│   │   └── utils/              # Utilitários para o dashboard
+│   │       ├── __init__.py     # Define o diretório como pacote Python
+│   │       ├── data_loader.py  # Carregamento e processamento de dados
+│   │       └── model_loader.py # Carregamento e utilização de modelos de ML
+│   ├── esp32/                  # Código para dispositivos ESP32
+│   │   ├── circuit_diagram.txt # Diagrama de circuito para o hardware
 │   │   ├── disaster_monitoring_system.ino  # Código Arduino para o ESP32
-│   │   └── simulator.py         # Simulador de dados de sensores
-│   ├── data_preprocessing.py    # Preparação e limpeza de dados históricos
-│   ├── exploratory_analysis.py  # Análise exploratória de dados de desastres
-│   ├── model_development.py     # Desenvolvimento de modelos preditivos
-│   ├── model_example.py         # Implementação de exemplo de modelo de ML
-│   ├── neural_network_development.py    # Desenvolvimento da rede neural
-│   ├── neural_network_functions.py     # Funções utilizadas pela rede neural
-│   ├── neural_network_main.py          # Script principal da rede neural
-│   └── neural_network_quick_test.py    # Testes rápidos da rede neural
-└── README.md                    # Este arquivo
+│   │   └── simulator.py       # Simulador de dados de sensores
+│   ├── data_preprocessing.py  # Preparação e limpeza de dados históricos
+│   ├── exploratory_analysis.py # Análise exploratória de dados de desastres
+│   ├── model_development.py   # Desenvolvimento de modelos preditivos
+│   ├── model_example.py       # Implementação de exemplo de modelo de ML
+│   ├── neural_network_development.py  # Desenvolvimento da rede neural
+│   ├── neural_network_functions.py   # Funções utilizadas pela rede neural
+│   ├── neural_network_main.py        # Script principal da rede neural
+│   └── neural_network_quick_test.py  # Testes rápidos da rede neural
+└── README.md                  # Este arquivo
 ```
 
 ---
@@ -198,6 +195,77 @@ O sistema de alertas possibilita:
 - Visualizar histórico de alertas passados
 
 ---
+
+### 💾 Estrutura do Arquivo sensor_data.json
+
+O arquivo `data/sensor_data.json` é o componente central para armazenamento e simulação dos dados de sensores. Ele contém três seções principais:
+
+1. **devices**: Informações sobre os dispositivos de monitoramento
+
+   ```json
+   {
+     "ESP32_01": {
+       "name": "Sensor São Paulo",
+       "location": "São Paulo, SP",
+       "lat": -23.5505,
+       "lon": -46.6333,
+       "status": "online",
+       "last_update": "2025-06-06T16:09:01.445138"
+     }
+   }
+   ```
+
+2. **readings**: Leituras de sensores ao longo do tempo
+
+   ```json
+   {
+     "device_id": "ESP32_01",
+     "timestamp": "2025-06-03T02:19:06.620419",
+     "readings": {
+       "temperature": 28.33,
+       "humidity": 72.28,
+       "pressure": 1017.68,
+       "water_level": 9.27,
+       "soil_moisture": 41.06,
+       "vibration": 57.20,
+       "rain_level": 10.04
+     }
+   }
+   ```
+
+3. **alerts**: Alertas gerados com base nos dados dos sensores
+
+   ```json
+   {
+     "type": "high_water_level",
+     "message": "Nível de água elevado: 19.8cm - risco de inundação",
+     "severity": "critical",
+     "device_id": "ESP32_01",
+     "timestamp": "2025-06-03T14:38:01.422732"
+   }
+   ```
+
+### 💽 Executando o Simulador ESP32
+
+O simulador ESP32 gera dados sintéticos que imitam a coleta de informações de sensores reais em campo. Para executá-lo:
+
+1. Navegue até o diretório do simulador:
+
+   ```bash
+   cd src/esp32
+   ```
+
+2. Execute o script do simulador:
+
+   ```bash
+   python simulator.py
+   ```
+
+O simulador executará com um intervalo padrão de 60 segundos, gerando dados aleatórios para quatro dispositivos virtuais localizados em diferentes cidades brasileiras (São Paulo, Rio de Janeiro, Belo Horizonte e Salvador). Os dados incluem leituras de temperatura, umidade, pressão, nível de água, umidade do solo, vibração e nível de chuva.
+
+Quando alguma leitura ultrapassar os limiares definidos no código (por exemplo, nível de água acima de 10cm), serão gerados alertas automaticamente com diferentes níveis de severidade (info, warning, critical).
+
+Para interromper a simulação, pressione Ctrl+C.
 
 ## 🔄 Integrações Futuras
 
