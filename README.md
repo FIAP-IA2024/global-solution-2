@@ -295,7 +295,7 @@ Para interromper a simulação, pressione Ctrl+C.
 
 ## 🎥 Demonstração
 
-[Link para vídeo demonstrativo do projeto] (a ser adicionado)
+[Link para vídeo demonstrativo do projeto](https://youtu.be/pPk12hOqGOQ)
 
 ## 📋 Licença
 
