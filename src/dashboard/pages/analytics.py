@@ -36,7 +36,7 @@ with st.sidebar:
 def show():
     st.title("Analytics")
     st.write(
-        "Anu00e1lise de dados histu00f3ricos de desastres e prediu00e7u00f5es do modelo de Machine Learning."
+        "Análise de dados históricos de desastres e predições do modelo de Machine Learning."
     )
     
     # Adicionar spinner global no topo
@@ -45,21 +45,21 @@ def show():
         df_disasters = load_disaster_dataset()
         predictions = load_prediction_results()
 
-    # Tabs para separar os diferentes tipos de anu00e1lise
+    # Tabs para separar os diferentes tipos de análise
     tab1, tab2, tab3 = st.tabs(
-        ["Dados Histu00f3ricos", "Prediu00e7u00f5es", "Modelo de ML"]
+        ["Dados Históricos", "Predições", "Modelo de ML"]
     )
 
     with tab1:
-        st.header("Anu00e1lise de Dados Histu00f3ricos")
+        st.header("Análise de Dados Históricos")
 
         if df_disasters is not None and not df_disasters.empty:
             # Usar progress bar para mostrar o carregamento dos resumos
             with st.spinner("Carregando resumos estatísticos..."):
-                # Resumo estatu00edstico dos dados
-                st.subheader("Resumo Estatu00edstico")
+                # Resumo estatístico dos dados
+                st.subheader("Resumo Estatístico")
 
-            # Verificar as colunas disponu00edveis no dataframe
+            # Verificar as colunas disponíveis no dataframe
             if all(
                 col in df_disasters.columns
                 for col in ["Disaster Type", "Total Deaths", "Total Affected"]
@@ -71,11 +71,11 @@ def show():
                     .reset_index()
                 )
 
-                # Mostrar gru00e1fico de barras por tipo de desastre
+                # Mostrar gráfico de barras por tipo de desastre
                 st.write("#### Impacto por Tipo de Desastre")
 
                 impact_metric = st.selectbox(
-                    "Selecione o mu00e9trico de impacto",
+                    "Selecione o métrico de impacto",
                     options=["Total Deaths", "Total Affected"],
                 )
                 
@@ -94,9 +94,9 @@ def show():
                     )
                     st.plotly_chart(fig, use_container_width=True)
 
-                # Anu00e1lise temporal
+                # Análise temporal
                 if "Year" in df_disasters.columns:
-                    st.write("#### Tendu00eancia Temporal de Desastres")
+                    st.write("#### Tendência Temporal de Desastres")
                     
                     # Spinner para a análise temporal
                     with st.spinner("Calculando tendências temporais..."):
@@ -110,8 +110,8 @@ def show():
                             yearly_data,
                             x="Year",
                             y="count",
-                            title="Nu00famero de Desastres por Ano",
-                            labels={"count": "Nu00famero de Desastres", "Year": "Ano"},
+                            title="Número de Desastres por Ano",
+                            labels={"count": "Número de Desastres", "Year": "Ano"},
                         )
                         st.plotly_chart(fig, use_container_width=True)
 
@@ -128,9 +128,9 @@ def show():
                                 x="Year",
                                 y="count",
                                 color="Disaster Type",
-                                title="Nu00famero de Desastres por Ano e Tipo",
+                                title="Número de Desastres por Ano e Tipo",
                                 labels={
-                                    "count": "Nu00famero de Desastres",
+                                    "count": "Número de Desastres",
                                     "Year": "Ano",
                                     "Disaster Type": "Tipo de Desastre",
                                 },
@@ -142,18 +142,18 @@ def show():
                 st.write(df_disasters)
         else:
             st.warning(
-                "Nu00e3o foi possu00edvel carregar dados histu00f3ricos de desastres."
+                "Não foi possível carregar dados históricos de desastres."
             )
 
     with tab2:
-        st.header("Prediu00e7u00f5es do Modelo")
+        st.header("Predições do Modelo")
 
         if predictions is not None and not predictions.empty:
             # Spinner para predições
             with st.spinner("Carregando predições do modelo..."):
-                st.subheader("u00daltimas Prediu00e7u00f5es")
+                st.subheader("Últimas Predições")
 
-            # Mostrar prediu00e7u00f5es em cards
+            # Mostrar predições em cards
             for idx, pred in predictions.iterrows():
                 # Definir cor com base na probabilidade
                 if pred["probability"] >= 0.7:
@@ -196,7 +196,7 @@ def show():
             )
             st.plotly_chart(fig, use_container_width=True)
         else:
-            st.warning("Nu00e3o hu00e1 prediu00e7u00f5es disponu00edveis no momento.")
+            st.warning("Não há predições disponíveis no momento.")
 
     with tab3:
         st.header("Modelo de Machine Learning")
@@ -204,18 +204,20 @@ def show():
         with st.spinner("Carregando informações do modelo..."):
             st.write(
                 """
-            ### Modelo de Redes Neurais para Prediu00e7u00e3o de Desastres
+            ### Modelo de Redes Neurais para Predição de Desastres
         
-        O sistema utiliza uma Rede Neural Perceptron Multicamadas (MLP) para realizar tru00eas tipos de prediu00e7u00f5es:
+        O sistema utiliza uma Rede Neural Perceptron Multicamadas (MLP) para realizar três tipos de predições:
         
-        1. **Classificau00e7u00e3o Binu00e1ria de Alto Impacto**: Prever se um evento tem potencial para ser um desastre de alto impacto.
-        2. **Prediu00e7u00e3o de Mortalidade**: Estimar o nu00famero potencial de mortes.
-        3. **Prediu00e7u00e3o de Pessoas Afetadas**: Estimar o nu00famero potencial de pessoas afetadas.
+        1. **Classificação do Tipo de Desastre**: Baseado nos dados dos sensores, o modelo prevê o tipo de desastre que pode ocorrer (inundação, deslizamento, incêndio ou terremoto)
+        
+        2. **Severidade do Desastre**: O modelo estima a gravidade do possível desastre em uma escala de 1-5
+        
+        3. **Probabilidade de Ocorrência**: Estimativa da chance do desastre realmente acontecer
         
         #### Arquitetura do Modelo
-        - Camada de entrada: Recebe dados de sensores ambientais (temperatura, umidade, pressu00e3o, etc.)
-        - Camadas ocultas: Processamento dos padru00f5es e relau00e7u00f5es nos dados
-        - Camadas de sau00edda: Gerau00e7u00e3o das prediu00e7u00f5es finais
+        - Camada de entrada: Recebe dados de sensores ambientais (temperatura, umidade, pressão, etc.)
+        - Camadas ocultas: Processamento dos padrões e relações nos dados
+        - Camadas de saída: Geração das predições finais
         
         #### Performance do Modelo
         """
@@ -240,15 +242,15 @@ def show():
         st.write(
             """
         #### Recursos do Modelo
-        - **Treinamento Contu00ednuo**: O modelo u00e9 continuamente refinado com novos dados.
-        - **Validau00e7u00e3o Cruzada**: Garantia de generalizau00e7u00e3o e robustez.
-        - **Integrau00e7u00e3o com Sensores**: Utiliza dados em tempo real para prediu00e7u00f5es.
-        - **Sistema de Alertas**: Ativa alertas automaticamente com base nas prediu00e7u00f5es.
+        - **Treinamento Contínuo**: O modelo é continuamente refinado com novos dados.
+        - **Validação Cruzada**: Garantia de generalização e robustez.
+        - **Integração com Sensores**: Utiliza dados em tempo real para predições.
+        - **Sistema de Alertas**: Ativa alertas automaticamente com base nas predições.
         """
         )
 
         # Simular feature importance
-        st.subheader("Importu00e2ncia das Caracteru00edsticas")
+        st.subheader("Importância das Características")
         
         # Spinner para o gráfico de feature importance
         with st.spinner("Calculando importância de características..."):

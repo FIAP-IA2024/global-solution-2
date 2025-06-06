@@ -53,7 +53,7 @@ def show():
     else:
         filtered_devices = pd.DataFrame()
 
-    # Usar st.map para mapa bu00e1sico (mais simples)
+    # Usar st.map para mapa básico (mais simples)
     if (
         show_devices
         and len(filtered_devices) > 0
@@ -69,12 +69,12 @@ def show():
         )
         st.map(map_data)
 
-    # Usar pydeck para um mapa mais avanu00e7ado (opcional se st.map for suficiente)
+    # Usar pydeck para um mapa mais avançado (opcional se st.map for suficiente)
     if (
-        st.checkbox("Mostrar Mapa Avanu00e7ado", value=False)
+        st.checkbox("Mostrar Mapa Avançado", value=False)
         and len(filtered_devices) > 0
     ):
-        st.subheader("Mapa Avanu00e7ado")
+        st.subheader("Mapa Avançado")
 
         # Preparar dados para o mapa
         if (
@@ -91,7 +91,7 @@ def show():
                 )
             )
 
-            # Definir view inicial (cenu00e1rio para Su00e3o Paulo, ajuste conforme necessu00e1rio)
+            # Definir view inicial (cenário para São Paulo, ajuste conforme necessário)
             view_state = pdk.ViewState(
                 latitude=-23.5505,
                 longitude=-46.6333,
@@ -117,7 +117,7 @@ def show():
                     initial_view_state=view_state,
                     layers=[layer],
                     tooltip={
-                        "html": "<b>Nome:</b> {name}<br><b>Status:</b> {status}<br><b>Localizau00e7u00e3o:</b> {location}",
+                        "html": "<b>Nome:</b> {name}<br><b>Status:</b> {status}<br><b>Localização:</b> {location}",
                         "style": {"backgroundColor": "steelblue", "color": "white"},
                     },
                 )
@@ -131,10 +131,10 @@ def show():
         {
             "name": [
                 "Zona 1 - Alto Risco",
-                "Zona 2 - Mu00e9dio Risco",
+                "Zona 2 - Médio Risco",
                 "Zona 3 - Baixo Risco",
             ],
-            "risk_level": ["Alto", "Mu00e9dio", "Baixo"],
+            "risk_level": ["Alto", "Médio", "Baixo"],
             "lat": [
                 -23.5505,
                 -23.6505,
@@ -147,9 +147,9 @@ def show():
             ],  # Exemplo - ajuste para coordenadas reais
             "radius": [5000, 3000, 2000],  # Raio em metros
             "description": [
-                "Regiu00e3o com alto risco de inundau00e7u00e3o devido u00e0 proximidade de rios e u00e1reas de baixada",
-                "Regiu00e3o com risco mu00e9dio de deslizamento de terra em u00e9pocas de chuva intensa",
-                "Regiu00e3o com baixo risco de eventos climu00e1ticos extremos, mas com monitoramento preventivo",
+                "Região com alto risco de inundação devido à proximidade de rios e áreas de baixada",
+                "Região com risco médio de deslizamento de terra em épocas de chuva intensa",
+                "Região com baixo risco de eventos climáticos extremos, mas com monitoramento preventivo",
             ],
         }
     )
@@ -159,31 +159,31 @@ def show():
         risk_color = (
             "red"
             if zone["risk_level"] == "Alto"
-            else "orange" if zone["risk_level"] == "Mu00e9dio" else "blue"
+            else "orange" if zone["risk_level"] == "Médio" else "blue"
         )
         with st.expander(f"{zone['name']}"):
             st.markdown(
-                f"<strong>Nu00edvel de Risco:</strong> <span style='color: {risk_color};'>{zone['risk_level']}</span>",
+                f"<strong>Nível de Risco:</strong> <span style='color: {risk_color};'>{zone['risk_level']}</span>",
                 unsafe_allow_html=True,
             )
-            st.write(f"**Descriu00e7u00e3o:** {zone['description']}")
+            st.write(f"**Descrição:** {zone['description']}")
             st.write(f"**Coordenadas:** {zone['lat']}, {zone['lon']}")
             st.write(f"**Raio da Zona:** {zone['radius']/1000:.1f} km")
 
-            # Botu00f5es de au00e7u00e3o
+            # Botões de ação
             col1, col2 = st.columns(2)
             with col1:
                 if st.button("Ver Dispositivos na Zona", key=f"devices_{idx}"):
                     st.info(
-                        "Funu00e7u00e3o para listar dispositivos na zona (simulau00e7u00e3o)"
+                        "Função para listar dispositivos na zona (simulação)"
                     )
             with col2:
-                if st.button("Ver Histu00f3rico de Alertas", key=f"alerts_{idx}"):
+                if st.button("Ver Histórico de Alertas", key=f"alerts_{idx}"):
                     st.info(
-                        "Funu00e7u00e3o para mostrar histu00f3rico de alertas da zona (simulau00e7u00e3o)"
+                        "Função para mostrar histórico de alertas da zona (simulação)"
                     )
 
-    # Seu00e7u00e3o para reportar novas zonas de risco
+    # Seção para reportar novas zonas de risco
     st.markdown("---")
     st.subheader("Reportar Nova Zona de Risco")
 
@@ -193,11 +193,11 @@ def show():
         with col1:
             zone_name = st.text_input("Nome da Zona")
             risk_level = st.select_slider(
-                "Nu00edvel de Risco",
-                options=["Baixo", "Mu00e9dio", "Alto"],
-                value="Mu00e9dio",
+                "Nível de Risco",
+                options=["Baixo", "Médio", "Alto"],
+                value="Médio",
             )
-            description = st.text_area("Descriu00e7u00e3o")
+            description = st.text_area("Descrição")
 
         with col2:
             zone_lat = st.number_input("Latitude", value=-23.5505, format="%f")
