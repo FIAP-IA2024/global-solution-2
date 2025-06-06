@@ -54,3 +54,4 @@ plots/
 tmp/
 temp/
 
+!results/.gitkeep
