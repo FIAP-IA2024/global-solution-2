@@ -45,6 +45,7 @@ Este projeto representa a Global Solution FIAP 2025.1 para o curso de **Intelig�
 /global-solution-2
 ├── data/                        # Dados do projeto
 │   └── sensor_data.json        # Arquivo JSON com dados de sensores e alertas
+├── dataset.xlsx                  # Dataset histórico de desastres naturais (EM-DAT)
 │
 ├── src/                         # Código-fonte do projeto
 │   ├── dashboard/               # Aplicação Streamlit para o dashboard
@@ -195,6 +196,24 @@ O sistema de alertas possibilita:
 - Visualizar histórico de alertas passados
 
 ---
+
+### 💹 Dataset de Desastres Naturais (EM-DAT)
+
+O arquivo `dataset.xlsx` contém dados históricos de desastres naturais obtidos da base EM-DAT (Emergency Events Database) do Centre for Research on the Epidemiology of Disasters (CRED), disponível em [https://public.emdat.be/](https://public.emdat.be/).
+
+Este dataset abrange eventos de desastres naturais em escala global e inclui informações detalhadas como:
+
+- **Dis No**: Identificador único do desastre
+- **Year**: Ano de ocorrência do evento
+- **Disaster Group/Type/Subtype**: Categorização hierárquica dos desastres (ex: Natural/Hidrológico/Inundação)
+- **Country/Region**: País e região onde ocorreu o desastre
+- **Location**: Locais específicos afetados
+- **Start/End Date**: Período de início e fim do evento
+- **Total Deaths/Affected/Injured**: Impacto humano (mortes, pessoas afetadas, feridos)
+- **Total Damages ('000 US$)**: Impacto econômico em milhares de dólares
+- **Disaster Magnitude**: Informações sobre a magnitude do desastre
+
+Este dataset é utilizado nos módulos de análise e modelos preditivos para treinar algoritmos que identificam padrões em desastres passados e projetam possíveis eventos futuros.
 
 ### 💾 Estrutura do Arquivo sensor_data.json
 
