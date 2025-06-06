@@ -82,20 +82,94 @@ def show():
                 battery_icon = "🪫"
 
             with cols[col_idx]:
-                st.markdown(
-                    f"""
-                <div style="padding: 20px; border: 1px solid #ddd; border-radius: 10px; margin-bottom: 20px;">
-                    <h3 style="margin-top: 0;">{device.get('name', device.get('device_id', 'Desconhecido'))}</h3>
+                # Criar card com componentes nativos do Streamlit
+                with st.container():
+                    # Aplicar CSS para estilizar o container como um card
+                    st.markdown(
+                        """
+                        <style>
+                        .device-card {
+                            border: 1px solid #ddd;
+                            border-radius: 10px;
+                            padding: 20px;
+                            background-color: white;
+                            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+                            margin-bottom: 20px;
+                        }
+                        </style>
+                        """,
+                        unsafe_allow_html=True
+                    )
                     
-                    <p><strong>ID:</strong> {device.get('device_id', 'N/A')}</p>
-                    <p><strong>Localização:</strong> {device.get('location', 'N/A')}</p>
-                    <p><strong>Status:</strong> <span style="color: {status_color}; font-weight: bold;">{device.get('status', 'N/A')}</span></p>
-                    <p><strong>Bateria:</strong> {battery}% {battery_icon}</p>
-                    <p><strong>Última atualização:</strong> {device.get('last_update', 'N/A')}</p>
-                </div>
-                """,
-                    unsafe_allow_html=True,
-                )
+                    # Iniciar div do card
+                    st.markdown('<div class="device-card">', unsafe_allow_html=True)
+                    
+                    # Nome do dispositivo como título
+                    device_name = device.get('name', device.get('device_id', 'Desconhecido'))
+                    st.subheader(device_name)
+                    
+                    # Status do dispositivo com cor
+                    status = device.get('status', 'N/A')
+                    st.markdown(f"**Status:** <span style='color: {status_color}; font-weight: bold;'>{status}</span>", unsafe_allow_html=True)
+                    
+                    # Informações do dispositivo
+                    col_a, col_b = st.columns(2)
+                    
+                    with col_a:
+                        st.markdown(f"**ID:** {device.get('device_id', 'N/A')}")
+                        st.markdown(f"**Localização:** {device.get('location', 'N/A')}")
+                    
+                    with col_b:
+                        st.markdown(f"**Bateria:** {battery}% {battery_icon}")
+                        st.markdown(f"**Última atualização:**  \n{device.get('last_update', 'N/A')}")
+                    
+                    # Botões de ação
+                    if st.button("👁️ Detalhes", key=f"detail_{device.get('device_id', idx)}"):
+                        # Mostrar mais detalhes quando o botão for clicado
+                        with st.expander(f"Detalhes do dispositivo {device_name}", expanded=True):
+                            # Dados dos sensores se disponível
+                            if "readings" in device:
+                                st.subheader("Leituras de Sensores")
+                                # Criar gráficos ou tabelas para as leituras
+                                readings = device.get("readings", {})
+                                if readings:
+                                    # Converter leituras para DataFrame
+                                    readings_df = pd.DataFrame([readings])
+                                    st.dataframe(readings_df)
+                                    
+                                    # Gráfico de barras para valores dos sensores
+                                    st.bar_chart(readings_df.T)
+                            
+                            # Histórico e estatísticas do dispositivo
+                            st.subheader("Informações Detalhadas")
+                            
+                            # Colunas para informações adicionais
+                            info_col1, info_col2 = st.columns(2)
+                            with info_col1:
+                                st.markdown(f"**Modelo:** {device.get('model', 'ESP32')}")
+                                st.markdown(f"**Versão do Firmware:** {device.get('firmware', 'v1.0.2')}")
+                                st.markdown(f"**Última Manutenção:** {device.get('last_maintenance', 'N/A')}")
+                            
+                            with info_col2:
+                                st.markdown(f"**IP:** {device.get('ip', '192.168.1.X')}")
+                                st.markdown(f"**MAC:** {device.get('mac', 'XX:XX:XX:XX:XX:XX')}")
+                                st.markdown(f"**Instalado em:** {device.get('installation_date', 'N/A')}")
+                                
+                            # Opções de gerenciamento
+                            st.subheader("Gerenciamento do Dispositivo")
+                            col_act1, col_act2, col_act3 = st.columns(3)
+                            with col_act1:
+                                if st.button("Reiniciar Dispositivo", key=f"restart_{device.get('device_id', idx)}"):
+                                    st.success("Comando de reinicialização enviado! (simulação)")
+                            with col_act2:
+                                if st.button("Atualizar Firmware", key=f"update_{device.get('device_id', idx)}"):
+                                    st.info("Iniciando atualização de firmware... (simulação)")
+                            with col_act3:
+                                if st.button("Calibrar Sensores", key=f"calibrate_{device.get('device_id', idx)}"):
+                                    st.success("Sensores calibrados com sucesso! (simulação)")
+                    
+                    # Fechar div do card
+                    st.markdown('</div>', unsafe_allow_html=True)
 
                 # Incrementar índice de coluna, resetar se necessário
                 col_idx = (col_idx + 1) % 3
