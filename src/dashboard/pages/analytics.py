@@ -38,10 +38,12 @@ def show():
     st.write(
         "Anu00e1lise de dados histu00f3ricos de desastres e prediu00e7u00f5es do modelo de Machine Learning."
     )
-
-    # Carregar dados de desastres histu00f3ricos
-    df_disasters = load_disaster_dataset()
-    predictions = load_prediction_results()
+    
+    # Adicionar spinner global no topo
+    with st.spinner("Carregando dados e preparando análises..."):
+        # Carregar dados de desastres histu00f3ricos
+        df_disasters = load_disaster_dataset()
+        predictions = load_prediction_results()
 
     # Tabs para separar os diferentes tipos de anu00e1lise
     tab1, tab2, tab3 = st.tabs(
@@ -52,8 +54,10 @@ def show():
         st.header("Anu00e1lise de Dados Histu00f3ricos")
 
         if df_disasters is not None and not df_disasters.empty:
-            # Resumo estatu00edstico dos dados
-            st.subheader("Resumo Estatu00edstico")
+            # Usar progress bar para mostrar o carregamento dos resumos
+            with st.spinner("Carregando resumos estatísticos..."):
+                # Resumo estatu00edstico dos dados
+                st.subheader("Resumo Estatu00edstico")
 
             # Verificar as colunas disponu00edveis no dataframe
             if all(
@@ -74,60 +78,64 @@ def show():
                     "Selecione o mu00e9trico de impacto",
                     options=["Total Deaths", "Total Affected"],
                 )
-
-                fig = px.bar(
-                    disaster_summary,
-                    x="Disaster Type",
-                    y=impact_metric,
-                    title=f"{impact_metric} por Tipo de Desastre",
-                    color="Disaster Type",
-                    labels={
-                        "value": impact_metric,
-                        "Disaster Type": "Tipo de Desastre",
-                    },
-                )
-                st.plotly_chart(fig, use_container_width=True)
+                
+                # Spinner para o gráfico de barras
+                with st.spinner("Gerando gráfico de impacto..."):
+                    fig = px.bar(
+                        disaster_summary,
+                        x="Disaster Type",
+                        y=impact_metric,
+                        title=f"{impact_metric} por Tipo de Desastre",
+                        color="Disaster Type",
+                        labels={
+                            "value": impact_metric,
+                            "Disaster Type": "Tipo de Desastre",
+                        },
+                    )
+                    st.plotly_chart(fig, use_container_width=True)
 
                 # Anu00e1lise temporal
                 if "Year" in df_disasters.columns:
                     st.write("#### Tendu00eancia Temporal de Desastres")
-
-                    # Agrupar por ano
-                    yearly_data = (
-                        df_disasters.groupby("Year").size().reset_index(name="count")
-                    )
-
-                    # Gru00e1fico de linha por ano
-                    fig = px.line(
-                        yearly_data,
-                        x="Year",
-                        y="count",
-                        title="Nu00famero de Desastres por Ano",
-                        labels={"count": "Nu00famero de Desastres", "Year": "Ano"},
-                    )
-                    st.plotly_chart(fig, use_container_width=True)
-
-                    # Agrupar por ano e tipo de desastre
-                    if "Disaster Type" in df_disasters.columns:
-                        yearly_by_type = (
-                            df_disasters.groupby(["Year", "Disaster Type"])
-                            .size()
-                            .reset_index(name="count")
+                    
+                    # Spinner para a análise temporal
+                    with st.spinner("Calculando tendências temporais..."):
+                        # Agrupar por ano
+                        yearly_data = (
+                            df_disasters.groupby("Year").size().reset_index(name="count")
                         )
 
+                        # Gráfico de linha por ano
                         fig = px.line(
-                            yearly_by_type,
+                            yearly_data,
                             x="Year",
                             y="count",
-                            color="Disaster Type",
-                            title="Nu00famero de Desastres por Ano e Tipo",
-                            labels={
-                                "count": "Nu00famero de Desastres",
-                                "Year": "Ano",
-                                "Disaster Type": "Tipo de Desastre",
-                            },
+                            title="Nu00famero de Desastres por Ano",
+                            labels={"count": "Nu00famero de Desastres", "Year": "Ano"},
                         )
                         st.plotly_chart(fig, use_container_width=True)
+
+                        # Agrupar por ano e tipo de desastre
+                        if "Disaster Type" in df_disasters.columns:
+                            yearly_by_type = (
+                                df_disasters.groupby(["Year", "Disaster Type"])
+                                .size()
+                                .reset_index(name="count")
+                            )
+
+                            fig = px.line(
+                                yearly_by_type,
+                                x="Year",
+                                y="count",
+                                color="Disaster Type",
+                                title="Nu00famero de Desastres por Ano e Tipo",
+                                labels={
+                                    "count": "Nu00famero de Desastres",
+                                    "Year": "Ano",
+                                    "Disaster Type": "Tipo de Desastre",
+                                },
+                            )
+                            st.plotly_chart(fig, use_container_width=True)
 
             # Exibir dados brutos
             if st.checkbox("Mostrar dados brutos"):
@@ -141,7 +149,9 @@ def show():
         st.header("Prediu00e7u00f5es do Modelo")
 
         if predictions is not None and not predictions.empty:
-            st.subheader("u00daltimas Prediu00e7u00f5es")
+            # Spinner para predições
+            with st.spinner("Carregando predições do modelo..."):
+                st.subheader("u00daltimas Prediu00e7u00f5es")
 
             # Mostrar prediu00e7u00f5es em cards
             for idx, pred in predictions.iterrows():
@@ -167,9 +177,12 @@ def show():
                     unsafe_allow_html=True,
                 )
 
-            # Gru00e1fico de probabilidades por tipo de desastre
+            # Gráfico de probabilidades por tipo de desastre
             st.subheader("Probabilidades por Tipo de Desastre")
-            fig = px.bar(
+            
+            # Spinner para gráfico de probabilidades
+            with st.spinner("Gerando gráfico de probabilidades..."):
+                fig = px.bar(
                 predictions,
                 x="disaster_type",
                 y="probability",
@@ -187,10 +200,11 @@ def show():
 
     with tab3:
         st.header("Modelo de Machine Learning")
-
-        st.write(
-            """
-        ### Modelo de Redes Neurais para Prediu00e7u00e3o de Desastres
+        
+        with st.spinner("Carregando informações do modelo..."):
+            st.write(
+                """
+            ### Modelo de Redes Neurais para Prediu00e7u00e3o de Desastres
         
         O sistema utiliza uma Rede Neural Perceptron Multicamadas (MLP) para realizar tru00eas tipos de prediu00e7u00f5es:
         
@@ -235,30 +249,33 @@ def show():
 
         # Simular feature importance
         st.subheader("Importu00e2ncia das Caracteru00edsticas")
-        feature_importance = pd.DataFrame(
-            {
-                "Feature": [
-                    "temperature",
-                    "humidity",
-                    "pressure",
-                    "water_level",
-                    "soil_moisture",
-                    "vibration",
-                    "rain_level",
-                ],
-                "Importance": [0.25, 0.18, 0.15, 0.22, 0.10, 0.05, 0.05],
-            }
-        )
+        
+        # Spinner para o gráfico de feature importance
+        with st.spinner("Calculando importância de características..."):
+            feature_importance = pd.DataFrame(
+                {
+                    "Feature": [
+                        "temperature",
+                        "humidity",
+                        "pressure",
+                        "water_level",
+                        "soil_moisture",
+                        "vibration",
+                        "rain_level",
+                    ],
+                    "Importance": [0.25, 0.18, 0.15, 0.22, 0.10, 0.05, 0.05],
+                }
+            )
 
-        fig = px.bar(
-            feature_importance,
-            x="Feature",
-            y="Importance",
-            title="Importância das Características no Modelo",
-            color="Importance",
-            labels={"Importance": "Importância", "Feature": "Característica"},
-        )
-        st.plotly_chart(fig, use_container_width=True)
+            fig = px.bar(
+                feature_importance,
+                x="Feature",
+                y="Importance",
+                title="Importância das Características no Modelo",
+                color="Importance",
+                labels={"Importance": "Importância", "Feature": "Característica"},
+            )
+            st.plotly_chart(fig, use_container_width=True)
 
 
 # Executar a função show()
