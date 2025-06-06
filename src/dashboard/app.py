@@ -14,7 +14,7 @@ st.set_page_config(
 )
 
 # Importar páginas modularizadas
-import pages.dashboard as dashboard
+import dashboard as dashboard
 
 # Sidebar principal
 with st.sidebar:

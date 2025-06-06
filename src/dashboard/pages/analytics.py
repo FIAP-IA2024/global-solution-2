@@ -165,13 +165,13 @@ def show():
 
                 st.markdown(
                     f"""
-                <div style="padding: 15px; border-radius: 5px; background-color: {card_color}; margin-bottom: 10px;">
-                    <h3>{pred['disaster_type']}</h3>
-                    <p><strong>Probabilidade:</strong> {pred['probability']:.2f}</p>
-                    <p><strong>Impacto Estimado:</strong> {pred['estimated_impact']}</p>
-                    <p><strong>Mortalidade Prevista:</strong> {pred['predicted_mortality']}</p>
-                    <p><strong>Pessoas Afetadas Previstas:</strong> {pred['predicted_affected']}</p>
-                    <p><strong>Timestamp:</strong> {pred['timestamp']}</p>
+                <div style="padding: 15px; border-radius: 5px; background-color: {card_color}; margin-bottom: 10px; color: black;">
+                    <h3 style="color: black;">{pred['disaster_type']}</h3>
+                    <p style="color: black;"><strong style="color: black;">Probabilidade:</strong> {pred['probability']:.2f}</p>
+                    <p style="color: black;"><strong style="color: black;">Impacto Estimado:</strong> {pred['estimated_impact']}</p>
+                    <p style="color: black;"><strong style="color: black;">Mortalidade Prevista:</strong> {pred['predicted_mortality']}</p>
+                    <p style="color: black;"><strong style="color: black;">Pessoas Afetadas Previstas:</strong> {pred['predicted_affected']}</p>
+                    <p style="color: black;"><strong style="color: black;">Timestamp:</strong> {pred['timestamp']}</p>
                 </div>
                 """,
                     unsafe_allow_html=True,
