@@ -74,8 +74,7 @@ Este projeto representa a Global Solution FIAP 2025.1, um dashboard de monitoram
 │   ├── neural_network_development.py    # Desenvolvimento da rede neural
 │   ├── neural_network_functions.py     # Funções utilizadas pela rede neural
 │   ├── neural_network_main.py          # Script principal da rede neural
-│   ├── neural_network_quick_test.py    # Testes rápidos da rede neural
-│   └── neural_network_quick_test_fixed.py # Versão corrigida dos testes
+│   └── neural_network_quick_test.py    # Testes rápidos da rede neural
 └── README.md                    # Este arquivo
 ```
 
@@ -147,6 +146,7 @@ Este projeto representa a Global Solution FIAP 2025.1, um dashboard de monitoram
 ### 📊 Página Principal
 
 A página principal do dashboard apresenta uma visão geral do sistema, com:
+
 - Indicadores chave de performance (KPIs)
 - Resumo de dispositivos ativos e inativos
 - Alertas recentes e não resolvidos
@@ -155,6 +155,7 @@ A página principal do dashboard apresenta uma visão geral do sistema, com:
 ### 🖥️ Dispositivos
 
 A página de Dispositivos permite:
+
 - Visualizar todos os dispositivos de monitoramento cadastrados
 - Filtrar dispositivos por status (online/offline/warning)
 - Ver detalhes de cada dispositivo, incluindo:
@@ -169,6 +170,7 @@ A página de Dispositivos permite:
 ### 📈 Analytics
 
 A página de Analytics oferece:
+
 - Análise temporal de desastres históricos
 - Impacto por tipo de desastre
 - Predições baseadas em modelos de Machine Learning
@@ -178,6 +180,7 @@ A página de Analytics oferece:
 ### 🗺️ Mapa
 
 A página de visualização geográfica permite:
+
 - Ver a distribuição de dispositivos de monitoramento em um mapa interativo
 - Filtrar dispositivos por status
 - Visualizar zonas de risco classificadas por nível de perigo
@@ -187,6 +190,7 @@ A página de visualização geográfica permite:
 ### ⚠️ Alertas
 
 O sistema de alertas possibilita:
+
 - Visualizar todos os alertas ativos
 - Filtrar alertas por nível de severidade
 - Gerenciar o status de alertas (em análise, resolvido, etc.)
@@ -205,23 +209,6 @@ O sistema de alertas possibilita:
 ## 🎥 Demonstração
 
 [Link para vídeo demonstrativo do projeto] (a ser adicionado)
-
-## 📋 Licença
-
-Este projeto segue o modelo de licença da FIAP e está licenciado sob **Attribution 4.0 International**.
-WIP
-
-- **Bibliotecas e Frameworks:**
-WIP
-
-- **Ferramentas e Serviços:**
-WIP
-
----
-
-## 🎥 Demonstração no YouTube
-
-WIP
 
 ## 📋 Licença
 
